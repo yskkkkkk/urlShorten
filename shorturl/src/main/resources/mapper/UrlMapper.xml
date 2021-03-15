@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daesung.shorturl.feature.url.UrlDAO">
+	
+	<insert id="insOriginUrl" parameterType="com.daesung.shorturl.model.dto.UrlDTO" useGeneratedKeys="true" keyProperty="url_sq">
+		/*insOriginUrl*/
+		INSERT INTO url
+		(
+			origin_url
+		)VALUES(
+			#{origin_url}
+		)		
+	</insert>
+
+	<update id="setUrlKey" parameterType="com.daesung.shorturl.model.dto.UrlDTO">
+		/*setUrlKey*/
+		UPDATE url
+		SET
+		url_key = #{url_key}
+		WHERE url_sq = #{url_sq}
+	</update>
+	
+	<update id="setUrlCnt" parameterType="com.daesung.shorturl.model.dto.UrlDTO">
+		/*setUrlCnt*/
+		UPDATE url
+		SET
+		request_cnt = #{request_cnt}
+		WHERE url_key = #{url_key}
+	</update>
+
+	<select id="getUrlInfo" parameterType="com.daesung.shorturl.model.dto.UrlDTO" resultType="com.daesung.shorturl.model.dto.UrlDTO">
+		/*getUrlInfo*/
+		SELECT 
+			url_sq,
+			origin_url,
+			url_key,
+			request_cnt,
+			reg_date
+		FROM url
+		WHERE 1 = 1
+		<if test="origin_url != null and origin_url != ''">
+			AND origin_url = #{origin_url}
+		</if>
+		<if test="url_key != null and url_key != ''">
+			AND url_key = #{url_key}
+		</if>
+	</select>
+
+</mapper>
