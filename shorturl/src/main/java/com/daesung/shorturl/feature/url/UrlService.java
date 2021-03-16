@@ -19,7 +19,8 @@ public class UrlService {
 	public String insOriginUrl(UrlDTO urlDTO) { // inpit value: origin_url
 		if (urlDAO.getUrlInfo(urlDTO) == null) {
 			urlDAO.insOriginUrl(urlDTO);
-			String key = toStringKeyOnBase62(63*urlDTO.getUrl_sq());
+			String key = toStringKeyOnBase62(173*urlDTO.getUrl_sq());
+			if(key.length() > 8) key = key.substring(0, 7);
 			urlDTO.setUrl_key(key);
 			urlDAO.setUrlKey(urlDTO);
 			return key;

@@ -1,5 +1,7 @@
 package com.daesung.shorturl.feature.url;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.daesung.shorturl.model.dto.UrlDTO;
@@ -17,8 +19,17 @@ public class UrlController {
 	
 	@ApiOperation(value = "insOriginUrl", notes = "입력")
 	@PostMapping("url")
-	public String insOriginUrl(@RequestBody UrlDTO urlDTO){
-		return urlService.insOriginUrl(urlDTO);
+	public ResponseEntity<?> insOriginUrl(@RequestBody UrlDTO urlDTO){
+		String result = "";
+		HttpStatus resultStatus = HttpStatus.OK;
+		try {
+			result = urlService.insOriginUrl(urlDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resultStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+		}
+		System.out.println(result);
+		return new ResponseEntity<>(result, resultStatus);
 	}
 	
 	@ApiOperation(value = "getUrlInfo", notes = "입력")
@@ -29,4 +40,8 @@ public class UrlController {
 		return urlService.getUrlInfo(urlDTO);
 	}
 	
+	@GetMapping("test")
+	public String test() {
+		return "good";
+	}
 }
