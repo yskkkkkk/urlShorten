@@ -17,20 +17,18 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	<input type="hidden" value="${originUrl}" id="orgin_url">
+	<input type="hidden" value="${urlKey}" id="urlKey">
 	<div>
 		<form class="well form-search">
-			<input type="text" class="input-medium search-query"
-				placeholder="url 입력" id="origin" />
+			<input type="text" class="input-medium search-query" placeholder="url 입력" id="origin" onkeydown="JavaScript:Enter_Check();"/>
 			<button type="button" class="btn" id="trans_btn">변환</button>
-			<input type="text" class="input-medium search-query" readonly="readonly" id="result" style="display: none;" />
+			<input type="text" class="input-medium search-query" readonly="readonly" id="result" style="display: none;" onfocus="sel()" />
 		</form>
 	</div>
 	<div>
-		<form class="well form-search">
-			<input type="text" class="input-medium search-query"
-				placeholder="단축 url 입력" />
-			<button type="button" class="btn">주소 입력</button>
+		<form class="well form-search" onsubmit="return false;">
+			<input type="text" class="input-medium search-query" placeholder="단축 url 입력" id="input_key_url" onkeydown="JavaScript:Enter_Check();"/>
+			<button type="button" class="btn" id="send_btn" >주소 입력</button>
 		</form>
 	</div>
 

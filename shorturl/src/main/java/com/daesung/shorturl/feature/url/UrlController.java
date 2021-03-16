@@ -8,7 +8,9 @@ import com.daesung.shorturl.model.dto.UrlDTO;
 
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("url")
 @RequiredArgsConstructor
@@ -27,8 +29,9 @@ public class UrlController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			resultStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+		}finally {
+			log.info(result);
 		}
-		System.out.println(result);
 		return new ResponseEntity<>(result, resultStatus);
 	}
 	
@@ -38,10 +41,5 @@ public class UrlController {
 		UrlDTO urlDTO = new UrlDTO();
 		urlDTO.setUrl_key(urlKey);
 		return urlService.getUrlInfo(urlDTO);
-	}
-	
-	@GetMapping("test")
-	public String test() {
-		return "good";
 	}
 }
