@@ -42,4 +42,11 @@ public class UrlController {
 		urlDTO.setUrl_key(urlKey);
 		return urlService.getUrlInfo(urlDTO);
 	}
+	
+	@GetMapping("hello")
+	public String hello() {
+		log.info("for test");
+		return "hello";
+	}
+	
 }

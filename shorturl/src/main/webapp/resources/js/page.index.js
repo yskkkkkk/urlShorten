@@ -50,7 +50,8 @@ $.get_url_key = function () {
 	if (nullFlag) return;
 	
 	var data = document.getElementById("origin").value;
-	data = data.substring(0.4) == "http" ? data : "http://" + data;
+	console.log(data.substring(0.4));
+	data = data.startsWith("http") ? data : "http://" + data;
 
 	let regex = /(http(s)?:\/\/)([a-z0-9\w]+\.{1})+[a-z0-9]{2,4}/gi
 	if(!regex.test(data)){
