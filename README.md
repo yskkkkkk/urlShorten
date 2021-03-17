@@ -20,7 +20,7 @@ git clone + [repository 주소]
  를 이용해 프로젝트를 가져오고 
  해당 repository로 위치를 바꾸고 빌드를 시작해줍니다. 
 
-
+<del>
 ~~![image](https://user-images.githubusercontent.com/55343933/111430528-d9194980-873d-11eb-9dbe-bfe2857a1aa7.png)~~
 
 ~~이후 빌드를 하게 되면 ~~
@@ -37,6 +37,8 @@ git clone + [repository 주소]
 ~~프로세스가 실행중인것을 명령어로 확인할 수 있습니다.
 ![image](https://user-images.githubusercontent.com/55343933/111432751-c18f9000-8740-11eb-9620-b45fb731ab22.png)
 ~~
+</del>
+
 ####jsp를 지원하지 않는 jar로 배포하지 않고 war로 바꿔서 배포합니다.
 
 메이븐 설정을 jar -> war 로 한뒤 ServletInitializer class 를 생성하여 war 에게 맞게 해줍니다.
