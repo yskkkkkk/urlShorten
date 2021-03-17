@@ -21,9 +21,9 @@ git clone + [repository 주소]
  해당 repository로 위치를 바꾸고 빌드를 시작해줍니다. 
 
 
-~~![image](https://user-images.githubusercontent.com/55343933/111430528-d9194980-873d-11eb-9dbe-bfe2857a1aa7.png)
+~~![image](https://user-images.githubusercontent.com/55343933/111430528-d9194980-873d-11eb-9dbe-bfe2857a1aa7.png)~~
 
-~~이후 빌드를 하게 되면 
+~~이후 빌드를 하게 되면 ~~
 해당 화면과 함께 jar 파일이 생성됩니다. 
 
 
