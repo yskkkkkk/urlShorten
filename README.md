@@ -20,8 +20,10 @@ git clone + [repository 주소]
  를 이용해 프로젝트를 가져오고 
  해당 repository로 위치를 바꾸고 빌드를 시작해줍니다. 
 
-이후 빌드를 하게 되면 
+
 ![image](https://user-images.githubusercontent.com/55343933/111430528-d9194980-873d-11eb-9dbe-bfe2857a1aa7.png)
+
+이후 빌드를 하게 되면 
 해당 화면과 함께 jar 파일이 생성됩니다. 
 
 
@@ -29,16 +31,13 @@ git clone + [repository 주소]
 ![image](https://user-images.githubusercontent.com/55343933/111431010-90ae5b80-873e-11eb-87fb-7941b96eb342.png)
 
 ![image](https://user-images.githubusercontent.com/55343933/111431157-c2bfbd80-873e-11eb-8feb-67a5d40ba863.png)
-시작하는것을 확인할 수 있습니다. 
 
-# 8. 링크 달기
+시작 하는 것을 확인할 수 있습니다. 
+
+
 (1) 인라인 링크  
-
-[블로그 주소](https://lsh424.tistory.com/)
 
 (2) 참조 링크  
 
-[블로그 주소][blog]
-
-[blog]: https://lsh424.tistory.com/
+[blog]: https://miniminis.github.io/2019/10/13/spring/springboot-deploy/
 
