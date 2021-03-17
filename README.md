@@ -5,6 +5,22 @@
 테스트는 aws 프리티어를 사용하여 EC2로 우분투 설정에 맞춰서 진행하였습니다.
 ![image](https://user-images.githubusercontent.com/55343933/111430450-c1da5c00-873d-11eb-908f-d7dab9c1998b.png)
 
+푸티젠을 이용하여 key를 생성하고 푸티를 통해 접속하였습니다. 
+![image](https://user-images.githubusercontent.com/55343933/111430654-0108ad00-873e-11eb-93b7-74b149db2e9d.png)
+
+해당 리눅스에 자바, 메이븐, 깃, mysql 등을 설치 하고 버전을 확인해 줍니다. 
+![image](https://user-images.githubusercontent.com/55343933/111430873-5c3a9f80-873e-11eb-9259-c214c538957b.png)
+
+
+이후 빌드를 하게 되면 
+
+![image](https://user-images.githubusercontent.com/55343933/111430528-d9194980-873d-11eb-9dbe-bfe2857a1aa7.png)
+해당 화면과 함께 jar 파일이 생성됩니다. 
+
+![image](https://user-images.githubusercontent.com/55343933/111430782-357c6900-873e-11eb-9a20-db03f039e5c7.png)
+
+해당 파일이 디렉터리로 위치를 이동하고 명령어를 이용해 배포해줍니다
+![image](https://user-images.githubusercontent.com/55343933/111431010-90ae5b80-873e-11eb-87fb-7941b96eb342.png)
 
 
 * 리스트1
