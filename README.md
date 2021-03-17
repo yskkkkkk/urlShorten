@@ -34,6 +34,9 @@ git clone + [repository 주소]
 
 시작 하는 것을 확인할 수 있습니다. 
 
+프로세스가 실행중인것을 명령어로 확인할 수 있습니다.
+![image](https://user-images.githubusercontent.com/55343933/111432751-c18f9000-8740-11eb-9620-b45fb731ab22.png)
+
 
 (1) 인라인 링크  
 
