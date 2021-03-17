@@ -12,6 +12,7 @@
 	<groupId>com.daesung</groupId>
 	<artifactId>shorturl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>shorturl</name>
 	<description>URL shortening API</description>
 	<properties>

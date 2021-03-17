@@ -13,20 +13,19 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
+
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UrlController.class)
-@AutoConfigureMockMvc
+@WebAppConfiguration
 class UrlControllerTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(UrlControllerTest.class);
@@ -61,18 +60,21 @@ class UrlControllerTest {
 
 	@Test
 	void testInsOriginUrl() throws Exception {
-		mock.perform(post("/url/url").content("https://knowing-today.blogspot.com/")
-				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andDo(print())
+		
+		mock.perform(post("/url/url")
+				.content("{\"urlKey\": \"https://knowing-today.blogspot.com/\"}")
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON))
+				.andDo(print())
 				.andExpect(status().isOk());
 	}
 
 	@Test
 	void testGetUrlInfo() throws Exception {
-		MultiValueMap<String, String> urlDTO = new LinkedMultiValueMap<>();
-
-		urlDTO.add("urlKey", "cc");
-		mock.perform(get("/url/url").params(urlDTO)).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string("https://www.naver.com"));
+		mock.perform(get("/url/url")
+				.param("urlKey","cc"))
+				.andDo(print())
+				.andExpect(status().isOk());
 	}
 
 }
