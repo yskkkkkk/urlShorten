@@ -1,18 +1,12 @@
 # urlShorten
 
-# MARKDOWN
-MARKDOWN 정리, 실습 for README.md
+# 리눅스를 통한 설치/배포 작업 
 
-# 1. 제목(글머리) 작성
-# H1 제목  
-## H2 부제목
-### H3 소제목
-#### H4 제목4
-##### H5 제목5
-###### H6 제목6
+테스트는 aws 프리티어를 사용하여 EC2로 우분투 설정에 맞춰서 진행하였습니다.
+![image](https://user-images.githubusercontent.com/55343933/111430450-c1da5c00-873d-11eb-908f-d7dab9c1998b.png)
 
 
-# 2. 번호 없는 리스트 작성
+
 * 리스트1
   - 리스트2
     + 리스트3
