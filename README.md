@@ -41,6 +41,24 @@ git clone + [repository 주소]
 war 는 tomcat을 통해 배포해야 하므로 리눅스에서 tomcat 8버전 또한 설치해줍니다. 
 
 
+---
+# 사용화면
+---
+![image](https://user-images.githubusercontent.com/55343933/111573369-bcd4e580-87ed-11eb-9083-8f46b776f29d.png)
+
+화면은 한개로 구성했으며 한페이지에 입력창은 두개있습니다. 
+
+![image](https://user-images.githubusercontent.com/55343933/111573444-e55cdf80-87ed-11eb-8c2f-c86b583b1a19.png)
+
+주소를 입력한 뒤 변환을 누르면 localhost/ + 키값의 형태로 나오며 해당 주소를 주소창 또는 아래의 입력창에 입력하여 원래의 주소로 이동할 수 있습니다. 
+
+![image](https://user-images.githubusercontent.com/55343933/111573567-205f1300-87ee-11eb-8840-70d3cc8165cd.png)
+주소입력 후 
+![image](https://user-images.githubusercontent.com/55343933/111573590-281eb780-87ee-11eb-8c72-1d7a56327176.png)
+
+네이버로 이동한 모습 
+
+
 (1) 인라인 링크  
 
 (2) 참조 링크  
