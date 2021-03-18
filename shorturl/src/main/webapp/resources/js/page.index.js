@@ -50,7 +50,6 @@ $.get_url_key = function () {
 	if (nullFlag) return;
 	
 	var data = document.getElementById("origin").value;
-	console.log(data.substring(0.4));
 	data = data.startsWith("http") ? data : "http://" + data;
 
 	let regex = /(http(s)?:\/\/)([a-z0-9\w]+\.{1})+[a-z0-9]{2,4}/gi
@@ -60,7 +59,7 @@ $.get_url_key = function () {
 	}
 	if (nullFlag) return;
 	const urlDTO = {};
-	urlDTO["origin_url"] = data;
+	urlDTO["originUrl"] = data;
 	$.ajax({
 		type: "POST",
 		url: "/url/url",

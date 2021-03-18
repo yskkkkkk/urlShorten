@@ -15,6 +15,7 @@ mybatis:
   - /mapper/*Mapper.xml
   configuration:
     call-setters-on-nulls: true
+    map-underscore-to-camel-case: true
 
 ---
 spring:

@@ -5,8 +5,6 @@ import java.util.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.daesung.shorturl.model.dto.UrlDTO;
-
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -16,29 +14,29 @@ public class UrlService {
 	private final UrlDAO urlDAO;
 
 	@Transactional
-	public String insOriginUrl(UrlDTO urlDTO) { // inpit value: origin_url
+	public String createUrlKey(UrlDTO urlDTO) { // inpit value: originUrl
 		if (urlDAO.getUrlInfo(urlDTO) == null) {
-			urlDAO.insOriginUrl(urlDTO);
-			String key = toStringKeyOnBase62(173*urlDTO.getUrl_sq());
+			urlDAO.createUrlKey(urlDTO);
+			String key = stringToKeyOnBase62(173*urlDTO.getUrlSequence());
 			if(key.length() > 8) key = key.substring(0, 7);
-			urlDTO.setUrl_key(key);
+			urlDTO.setUrlKey(key);
 			urlDAO.setUrlKey(urlDTO);
 			return key;
 		} else {
-			return urlDAO.getUrlInfo(urlDTO).getUrl_key();
+			return urlDAO.getUrlInfo(urlDTO).getUrlKey();
 		}
 	}
 
-	public String getUrlInfo(UrlDTO urlDTO) { // inpit value: url_key
+	public String getUrlInfo(UrlDTO urlDTO) { // inpit value: urlKey
 		
 		UrlDTO getDTO = urlDAO.getUrlInfo(urlDTO);
-		getDTO.setRequest_cnt(getDTO.getRequest_cnt()+1);
-		urlDAO.setUrlCnt(getDTO);
+		getDTO.setRequestCount(getDTO.getRequestCount()+1);
+		urlDAO.setUrlCount(getDTO);
 		
-		return getDTO.getOrigin_url();
+		return getDTO.getOriginUrl();
 	}
 
-	public String toStringKeyOnBase62(int originUrl) {
+	public String stringToKeyOnBase62(int originUrl) {
 
 		int cardinalNum = 62;
 		String character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

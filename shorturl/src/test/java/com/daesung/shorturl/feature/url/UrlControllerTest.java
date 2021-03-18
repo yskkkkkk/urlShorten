@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.daesung.shorturl.model.dto.UrlDTO;
-
 
 @SpringBootTest
 class UrlControllerTest {
@@ -33,15 +31,14 @@ class UrlControllerTest {
 	}
 
 	@Test
-	void testInsOriginUrl() throws Exception {
+	void testCreateUrlKey() {
 		UrlDTO urlDTO = new UrlDTO("http://www.kakao.com");
-		assertThat(urlService.insOriginUrl(urlDTO)).isNotNull();
+		assertThat(urlService.createUrlKey(urlDTO)).isNotNull();
 	}
 	@Test
-	void testGetUrlInfo() throws Exception {
+	void testGetUrlInfo() {
 		UrlDTO urlDTO = new UrlDTO();
-		urlDTO.setUrl_key("cc");
+		urlDTO.setUrlKey("cc");
 		assertThat(urlService.getUrlInfo(urlDTO)).isEqualTo("https://www.naver.com");
 	}
-
 }

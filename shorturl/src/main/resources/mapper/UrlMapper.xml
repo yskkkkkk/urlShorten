@@ -2,47 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.daesung.shorturl.feature.url.UrlDAO">
 	
-	<insert id="insOriginUrl" parameterType="com.daesung.shorturl.model.dto.UrlDTO" useGeneratedKeys="true" keyProperty="url_sq">
-		/*insOriginUrl*/
+	<insert id="createUrlKey" parameterType="com.daesung.shorturl.feature.url.UrlDTO" useGeneratedKeys="true" keyProperty="urlSequence">
+		/*createUrlKey*/
 		INSERT INTO url
 		(
 			origin_url
 		)VALUES(
-			#{origin_url}
+			#{originUrl}
 		)		
 	</insert>
 
-	<update id="setUrlKey" parameterType="com.daesung.shorturl.model.dto.UrlDTO">
+	<update id="setUrlKey" parameterType="com.daesung.shorturl.feature.url.UrlDTO">
 		/*setUrlKey*/
 		UPDATE url
 		SET
-		url_key = #{url_key}
-		WHERE url_sq = #{url_sq}
+		url_key = #{urlKey}
+		WHERE url_sequence = #{urlSequence}
 	</update>
 	
-	<update id="setUrlCnt" parameterType="com.daesung.shorturl.model.dto.UrlDTO">
-		/*setUrlCnt*/
+	<update id="setUrlCount" parameterType="com.daesung.shorturl.feature.url.UrlDTO">
+		/*setUrlCount*/
 		UPDATE url
 		SET
-		request_cnt = #{request_cnt}
-		WHERE url_key = #{url_key}
+		request_count = #{requestCount}
+		WHERE url_key = #{urlKey}
 	</update>
 
-	<select id="getUrlInfo" parameterType="com.daesung.shorturl.model.dto.UrlDTO" resultType="com.daesung.shorturl.model.dto.UrlDTO">
+	<select id="getUrlInfo" parameterType="com.daesung.shorturl.feature.url.UrlDTO" resultType="com.daesung.shorturl.feature.url.UrlDTO">
 		/*getUrlInfo*/
 		SELECT 
-			url_sq,
+			url_sequence,
 			origin_url,
 			url_key,
-			request_cnt,
-			reg_date
+			request_count,
+			regist_date
 		FROM url
 		WHERE 1 = 1
-		<if test="origin_url != null and origin_url != ''">
-			AND origin_url = #{origin_url}
+		<if test="originUrl != null and originUrl != ''">
+			AND origin_url = #{originUrl}
 		</if>
-		<if test="url_key != null and url_key != ''">
-			AND url_key = #{url_key}
+		<if test="urlKey != null and urlKey != ''">
+			AND url_key = #{urlKey}
 		</if>
 	</select>
 
