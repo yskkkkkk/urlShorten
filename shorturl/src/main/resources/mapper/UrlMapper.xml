@@ -16,7 +16,7 @@
 		/*setUrlKey*/
 		UPDATE url
 		SET
-		url_key = #{urlKey}
+			url_key = #{urlKey}
 		WHERE url_sequence = #{urlSequence}
 	</update>
 	
@@ -24,7 +24,7 @@
 		/*setUrlCount*/
 		UPDATE url
 		SET
-		request_count = #{requestCount}
+			request_count = #{requestCount}
 		WHERE url_key = #{urlKey}
 	</update>
 

@@ -64,11 +64,11 @@ $.get_url_key = function () {
 		type: "POST",
 		url: "/url/url",
 		data: JSON.stringify(urlDTO),
-		dataType: "text",
-		async:false,
 		contentType: "application/json; charset=utf-8",
+		async:false,
+		dataType: "json",
 		success: function(result) {
-			$('#result').val("http://localhost/"+result);
+			$('#result').val("http://localhost/"+result.result);
 			$('#result').css("display","block");
 		},
 		error: function(request, status, error) {   // 오류가 발생했을 때 호출된다. 

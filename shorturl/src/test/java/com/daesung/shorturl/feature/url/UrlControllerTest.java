@@ -14,21 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class UrlControllerTest {
 
-	private static final Logger logger = LoggerFactory.getLogger(UrlControllerTest.class);
-
 	@Autowired
 	private UrlService urlService;
-
-	
-	@Before
-	public void beforeTest() {
-		logger.info("===== beforeTest() =====");
-	}
-
-	@After
-	public void afterTest() {
-		logger.info("===== afterTest() =====");
-	}
 
 	@Test
 	void testCreateUrlKey() {

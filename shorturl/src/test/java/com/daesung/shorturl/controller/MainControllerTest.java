@@ -24,20 +24,8 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc	// 자동 mock bean 설정
 class MainControllerTest {
 
-	private static final Logger logger = LoggerFactory.getLogger(MainControllerTest.class);
-
 	@Autowired
 	private MockMvc mock;
-
-	@Before
-	public void beforeTest() {
-		logger.info("===== beforeTest() =====");
-	}
-
-	@After
-	public void afterTest() {
-		logger.info("===== afterTest() =====");
-	}
 
 	@Test
 	void testMain() throws Exception {

@@ -1,5 +1,8 @@
 package com.daesung.shorturl.feature.url;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +34,10 @@ public class UrlController {
 		}finally {
 			log.info(result);
 		}
-		return new ResponseEntity<>(result, resultStatus);
+		Map<String, Object> resultMap = new HashMap<>();
+		resultMap.put("result", result);
+		
+		return new ResponseEntity<>(resultMap, resultStatus);
 	}
 	
 	@ApiOperation(value = "getUrlInfo", notes = "입력")
@@ -40,13 +46,8 @@ public class UrlController {
 		log.info("input data: "+urlKey.toString());
 		UrlDTO urlDTO = new UrlDTO();
 		urlDTO.setUrlKey(urlKey);
+		
 		return urlService.getUrlInfo(urlDTO);
-	}
-	
-	@GetMapping("hello")
-	public String hello() {
-		log.info("for test");
-		return "hello";
 	}
 	
 }
